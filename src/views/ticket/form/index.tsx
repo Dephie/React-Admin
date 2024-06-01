@@ -24,7 +24,7 @@ function Basic() {
         name="工单管理"
         columns={getColumns()}
         // request={mockRequest}
-        request={(params, filter) => Request(params, filter)}
+        request={(params, filter) => ticketInitRequest(params, filter)}
         bordered
         innerRef={innerRef}
         actionRef={actionRef}

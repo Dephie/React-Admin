@@ -21,7 +21,7 @@ function Basic() {
         name="故障报修"
         columns={getColumns()}
         // request={mockRequest}
-        request={(params, filter) => Request(params, filter)}
+        request={(params, filter) => reportInitRequest(params, filter)}
         bordered
         innerRef={innerRef}
         actionRef={actionRef}

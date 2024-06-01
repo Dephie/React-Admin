@@ -17,12 +17,12 @@ const Login: React.FC = () => {
   async function onFinish(values: typeof form) {
     try {
       setLoading(true)
-      // const loginResponse = await http.post('/api/user/login', values)
-      // const data = loginResponse.data
-      // // const { token, user_id } = data
+      const loginResponse = await http.post('/api/user/login', values)
+      const data = loginResponse.data
+      const { token, user_id } = data
       // TODO
-      const token = '123456'
-      const user_id = '123456'
+      // const token = '123456'
+      // const user_id = '123456'
       // TODO
 
       setToken(token)

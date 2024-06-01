@@ -24,7 +24,7 @@ function Basic() {
         name="设备管理"
         columns={getColumns()}
         // request={mockRequest}
-        request={(params, filter) => Request(params, filter)}
+        request={(params, filter) => deviceInitRequest(params, filter)}
         bordered
         innerRef={innerRef}
         actionRef={actionRef}

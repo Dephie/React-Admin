@@ -18,7 +18,7 @@ export function Request(params, filter?,token?): any {
   })
 }
 
-export async function ticketInitRequest(params, filter,token) {
+export async function userInitRequest(params, filter,token) {
   try {
     const page_size = 1
     const current = 1

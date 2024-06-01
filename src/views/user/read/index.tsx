@@ -2,7 +2,7 @@ import { message } from 'antd'
 import { useRef } from 'react'
 import type { ActionRefType, InnerRefType } from 'react-admin-kit'
 import { ProTable} from 'react-admin-kit'
-import { Request } from './api.ts'
+import { Request, userInitRequest } from './api.ts'
 
 import { getColumns } from './columns.tsx'
 
@@ -21,10 +21,10 @@ function Basic() {
   return (
     <div>
       <ProTable
-        name="工单管理"
+        name="用户管理"
         columns={getColumns()}
         // request={mockRequest}
-        request={(params, filter) => Request(params, filter,token)}
+        request={(params, filter) => userInitRequest(params, filter,token)}
         bordered
         innerRef={innerRef}
         actionRef={actionRef}
