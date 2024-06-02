@@ -24,9 +24,13 @@ const Register: React.FC = () => {
       setToken(token)
 
       // 获取用户信息
-      const userInfoResponse = await http.get('/api/user', {
-        params: { user_id, token },
-      })
+      const request = {
+        params: {
+          user_id,
+          token,
+        },
+      }
+      const userInfoResponse = await http.get('/api/user', request)
       setUserInfo(userInfoResponse.data.user)
       message.success('注册成功')
       navigate('/', {

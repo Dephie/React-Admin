@@ -24,12 +24,14 @@ export async function reportInitRequest(params, filter) {
     const page_size = params.pageSize
     const current = params.current
     const requestData = {
-      page_size,
-      current,
-      ...filter,
+      params: {
+        page_size,
+        current,
+        ...filter,
+      }
     }
     // console.log('Sending request with data:', requestData)
-    const ReportResponse = await http.post('/api/fault', requestData)
+    const ReportResponse = await http.get('/api/fault', requestData)
     // const Response = await http.post('/api/fault', requestData)
 
     const data = ReportResponse.data

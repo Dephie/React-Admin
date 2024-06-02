@@ -23,11 +23,13 @@ export async function userInitRequest(params, filter,token) {
     const page_size = 1
     const current = 1
     const requestData = {
-      ...filter,
-      token,
+      params: {
+        ...filter,
+        token,
+      }
     }
     // console.log('Sending request with data:', requestData)
-    const Response = await http.post('/api/account/view', requestData)
+    const Response = await http.get('/api/account/view', requestData)
 
     const data = Response.data
 

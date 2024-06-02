@@ -61,29 +61,18 @@ const User = () => {
 
     const [loading, setLoading] = useState(false);
 
-    // const [user, setUser] = useState<UserProps>({
-    //     base: {
-    //         name: '',
-    //         birthdate: '',
-    //         gender: '',
-    //         address: '',
-    //     },
-    //     contact: {
-    //         contact: '',
-    //         email: '',
-    //     },
-    // });
-
     const handleFillData = async () => {
         try {
             setLoading(true)
             const requestData = {
+                params:{
                 user_id:userInfo.id,
-                token,
+                    token,
+                }
             }
             // console.log('Sending request with data:', requestData)
             //await http.post('/api/account/view', requestData)
-            const Response = await http.post('/api/user', requestData)
+            const Response = await http.get('/api/user', requestData)
             const data = Response.data.user
             formRef.current?.setFieldsValue({
                 base: {
@@ -126,10 +115,12 @@ const User = () => {
             try {
                 setLoading(true)
                 const requestData = {
-                    user_id: userInfo.id,
-                    token,
+                    params: {
+                        user_id: userInfo.id,
+                        token,
+                    }
                 }
-                const Response = await http.post('/api/user', requestData)
+                const Response = await http.get('/api/user', requestData)
                 const data = Response.data.user
                 setInitialValues({
                     base: {

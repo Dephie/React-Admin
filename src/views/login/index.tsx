@@ -22,15 +22,19 @@ const Login: React.FC = () => {
       const { token, user_id } = data
       // TODO
       // const token = '123456'
-      // const user_id = '123456'
+      // const user_id  = 123456
       // TODO
 
       setToken(token)
 
       // 获取用户信息
-      const userInfoResponse = await http.get('/api/user', {
-        params: { user_id, token },
-      })
+      const request = {
+        params: {
+          user_id,
+          token,
+        },
+      }
+      const userInfoResponse = await http.get('/api/user',request)
       setUserInfo(userInfoResponse.data.user)
       message.success('登录成功')
       navigate('/', {
