@@ -2,13 +2,22 @@ import path from 'node:path'
 import process from 'node:process'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 function reslovePath(pathName) {
   return path.resolve(process.cwd(), pathName)
 }
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]',
+    }),
+  ],
   resolve: {
     alias: {
       '@': reslovePath('./src'),

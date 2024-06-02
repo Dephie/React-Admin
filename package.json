@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@iconify-json/bi": "^1.1.23",
+    "@iconify/react": "^5.0.1",
     "@types/react-router-dom": "^5.3.3",
     "ahooks": "^3.8.0",
     "antd": "^5.17.4",
@@ -23,17 +24,22 @@
     "lint-staged": "^15.2.5",
     "lodash-es": "^4.17.21",
     "lucide-react": "^0.381.0",
+    "ramda": "^0.30.0",
     "rc-field-form": "1.22.0",
     "react": "^18.3.1",
     "react-admin-kit": "^0.5.1",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.4",
+    "styled-components": "^6.1.11",
+    "vite-tsconfig-paths": "^4.3.2",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.19.2",
     "@iconify/tailwind": "^0.1.4",
+    "@types/color": "^3.0.6",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.13.0",
     "@types/react": "^18.3.3",
@@ -47,6 +53,7 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12"
+    "vite": "^5.2.12",
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }

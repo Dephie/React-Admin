@@ -8,7 +8,9 @@ import { BarChart3, LaptopMinimal, ShieldAlert, Bell, FolderKanban, Clipboard, C
 const Login = lazy(() => import('@/views/login'))
 const Register = lazy(() => import('@/views/register'))
 
+//主页
 const Index = lazy(() => import('@/views/index'))
+const Workbench = lazy(() => import('@/views/dashboard/index'))
 // 故障报修
 const Report = lazy(() => import('@/views/report/form/index'))
 const CreateReport = lazy(() => import('@/views/report/create/index'))
@@ -40,7 +42,7 @@ export interface IRoute {
 export const menuList: IRoute[] = [
   {
     path: '/index',
-    element: <Index />,
+    element: <Workbench />,
     meta: {
       title: '工作台',
       icon: <BarChart3 />,

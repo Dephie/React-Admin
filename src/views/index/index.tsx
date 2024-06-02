@@ -3,10 +3,10 @@ import { useState } from 'react'
 import NumberCounter from '@/components/NumberCounter'
 
 const initializerCount = {
-  create_video_num: 99,
-  publish_video_num: 159853,
-  upload_material_num: 4456,
-  auth_account_num: 5655,
+  fault_num: 99,
+  device_num: 19853,
+  maintenance_user_num: 102,
+  user_num: 5655,
 }
 const cardList: Array<{
   key: keyof typeof initializerCount
@@ -14,7 +14,7 @@ const cardList: Array<{
   style: Record<string, any>
 }> = [
   {
-    key: 'create_video_num',
+    key: 'fault_num',
     title: '故障设备数',
     style: {
       // backgroundImage: 'linear-gradient(25deg, #46345d, #505679, #567995, #599db3)',
@@ -22,21 +22,21 @@ const cardList: Array<{
     },
   },
   {
-    key: 'publish_video_num',
+    key: 'device_num',
     title: '设备总数',
     style: {
       // backgroundImage: 'linear-gradient(25deg, #56489a, #8976b6, #baa8d2, #ebdcee)',
     },
   },
   {
-    key: 'upload_material_num',
+    key: 'maintenance_user_num',
     title: '维修人员',
     style: {
       // backgroundImage: 'linear-gradient(25deg, #004547, #66554b, #ac604e, #f26650)',
     },
   },
   {
-    key: 'auth_account_num',
+    key: 'user_num',
     title: '用户数',
     style: {
       // backgroundImage: 'linear-gradient(25deg, #2d2151, #65446a, #9c6a83, #d6939d)',
