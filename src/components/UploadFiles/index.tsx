@@ -66,11 +66,19 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
   }, [fileList, mount, onChange])
 
   async function customRequest(options: any) {
+    // console.log("options",options)
+    // console.log("file", options.file)
+
+    const avatarFile = options.file
+    const formData = new FormData()
+    formData.append('file', avatarFile)
+    const reponse = await http.post('/api/image', formData)
+    const falseUrl = reponse.data.url
+    const url = import.meta.env.VITE_APP_API + falseUrl
+    // const { url } = await Promise.resolve({
+    //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    // })
     
-    //console.log(file)
-    const { url } = await Promise.resolve({
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    })
 
     // const file = options.file;
     // const ReportResponse = await http.post('/api/user/avatar', {
