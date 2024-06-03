@@ -46,7 +46,7 @@ export async function deviceInitRequest(params, filter) {
     const deviceArray = deviceIsArray.map((item,index) => {
       return {
         id: index + 1,
-        user_id:item.owenr.id,
+        user_id:item.owner.id,
         device_id: item.id ? item.id : 0,
         owner: item.owner.name ? item.owner.name : '无',
         address: item.address ? item.address : '无',
