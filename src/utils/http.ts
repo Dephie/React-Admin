@@ -28,18 +28,18 @@ http.interceptors.response.use(
   (config) => {
     // token 失效
     if (config.data.status_code === responseCodeEnum.LOGIN_CODE) {
-      antdMessage.error(config.data.message)
+      antdMessage.error(config.data.status_msg)
       setTimeout(() => {
         loginOut()
       }, 500)
-      return Promise.reject(config.data)
+      return Promise.reject(config)
     }
     // 错误异常
     else if (config.data.status_code !== responseCodeEnum.SUCCESS_CODE) {
-      antdMessage.error(config.data.message)
-      return Promise.reject(config.data)
+      antdMessage.error(config.data.status_msg)
+      return Promise.reject(config)
     }
-    return Promise.resolve(config.data)
+    return Promise.resolve(config)
   },
   (error) => {
     let message = error.message
