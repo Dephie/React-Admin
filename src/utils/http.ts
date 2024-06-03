@@ -8,7 +8,8 @@ import { userStore } from '@/store/user'
  *  axios  https://github.com/axios/axios
  */
 export const http = axios.create({
-  baseURL: import.meta.env.MODE === 'dev' ? '' : import.meta.env.VITE_APP_API,
+  // baseURL: import.meta.env.MODE === 'dev' ? '' : import.meta.env.VITE_APP_API,
+  baseURL: import.meta.env.VITE_APP_API,
   timeout: requestConfigEnum.TIME_OUT as number,
 })
 
