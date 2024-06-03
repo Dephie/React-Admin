@@ -25,7 +25,7 @@ export async function userInitRequest(params, filter,token) {
     const { pageSize, current, ...filterParams } = params
     const requestData = {
       params: {
-        filterParams,
+        ...filterParams,
         token,
       }
     }

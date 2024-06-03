@@ -27,7 +27,7 @@ export async function reportInitRequest(params, filter) {
       params: {
         page_size,
         current,
-        filterParams,
+        ...filterParams,
       }
     }
     // console.log('Sending request with data:', requestData)

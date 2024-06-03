@@ -28,7 +28,7 @@ export async function deviceInitRequest(params, filter) {
       params: {
         page_size,
         current,
-        filterParams,
+        ...filterParams,
       }
     }
     // console.log('Sending request with data:', requestData)

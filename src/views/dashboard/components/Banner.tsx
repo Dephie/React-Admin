@@ -1,10 +1,12 @@
 import { Col, Row } from 'antd';
 import Color from 'color';
+import {userStore} from '@/store/user';
 
 import { useThemeToken } from '@/hooks/use-theme-token';
 
 export default function BannerCard() {
   const themeToken = useThemeToken();
+ const {userInfo} = userStore();
 
   const bg = `linear-gradient(135deg, ${Color(themeToken.colorPrimaryHover).alpha(0.2)}, ${Color(
     themeToken.colorPrimary,
@@ -15,23 +17,22 @@ export default function BannerCard() {
       className="!mx-0 rounded-2xl p-10"
       gutter={[16, 16]}
       justify="space-between"
-      style={{ background: bg }}
+      style={{ background: bg, height:'253.5px'}}
     >
       <Col span={24} md={12} xl={16} className="flex-1 text-center md:text-left">
         <div
-          className="mt-4 text-lg font-semibold md:text-xl"
+          className="text-lg font-semibold md:text-xl"
           style={{ color: themeToken.colorPrimaryActive }}
         >
-          <h4>Welcome back 👋 </h4>
-          <h4>dephie</h4>
+          <h4>欢迎回来 👋 </h4>
+          <h4>{userInfo.name}</h4>
         </div>
         <div
           style={{ color: themeToken.colorPrimaryTextActive }}
           className="mx-auto mb-6 mt-4 max-w-sm text-sm opacity-80 md:mx-0"
         >
-          Welcome to join the Discord channel to discuss everything about Slash Admin, or you can
-          visite my blog:
-          <div>
+          随着信息化技术的飞速发展，企业对于运维管理的需求也在不断提高。传统的运维方式已经难以满足企业迅速发展的需求.智慧运维系统以其高效的管理、优化的成本，为企业应对挑战、把握机遇提供了强有力的支撑。
+          {/* <div>
             <a
               href="https://blog.slashspaces.com"
               target="_blank"
@@ -41,14 +42,14 @@ export default function BannerCard() {
             >
               👉 https://blog.slashspaces.com
             </a>
-          </div>
+          </div> */}
         </div>
         <button
-          className="font-mediumtext-black m-auto flex items-center justify-center rounded-md px-2 py-1 shadow-none md:m-0"
+          className="font-mediumtext-black m-auto flex items-center justify-center rounded-md px-2 py-0.5 shadow-none md:m-0"
           style={{ backgroundColor: themeToken.colorPrimary, color: '#fff' }}
           onClick={() => window.open('https://discord.gg/fXemAXVNDa')}
         >
-          <span className="ml-2">Open Discord</span>
+          <span className="px-1 py-0.5 text-sm font-medium">雄安思极</span>
         </button>
       </Col>
 

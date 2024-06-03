@@ -28,7 +28,7 @@ export async function ticketInitRequest(params, filter) {
       params: {
         page_size,
         current,
-        filterParams,
+        ...filterParams,
       }
     }
     // console.log('Sending request with data:', requestData)
@@ -51,7 +51,7 @@ export async function ticketInitRequest(params, filter) {
         maintenance_person_id: item.maintenance_person.id ? item.maintenance_person.id : 0,
         maintenance_person: item.maintenance_person.name ? item.maintenance_person.name : '无',
         owner: item.fault.device.owner.name ? item.fault.device.owner.name : '无',
-        address: item.fault.device.owner.address ? item.fault.device.owner.address : '无',
+        address: item.fault.device.address ? item.fault.device.address : '无',
         device_name: item.fault.device.device_name ? item.fault.device.device_name : '无',
         status: item.status,
         maintenance_time: item.maintenance_time,
