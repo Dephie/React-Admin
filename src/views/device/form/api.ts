@@ -41,7 +41,7 @@ export async function deviceInitRequest(params, filter) {
 
     const device = data.device_list
     const deviceIsArray = isArray(device) ? device : [device]
-    const totalNumber = deviceIsArray.length()
+    const totalNumber = deviceIsArray.length
 
     const deviceArray = deviceIsArray.map((item,index) => {
       return {

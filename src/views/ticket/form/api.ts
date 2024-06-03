@@ -41,7 +41,7 @@ export async function ticketInitRequest(params, filter) {
 
     const ticket = data.work_order
     const ticketIsArray = isArray(ticket) ? ticket : [ticket]
-    const totalNumber = ticketIsArray.length()
+    const totalNumber = ticketIsArray.length
 
     const ticketArray = ticketIsArray.map((item,index) => {
       return {

@@ -40,7 +40,7 @@ export async function reportInitRequest(params, filter) {
     
     const fault = data.fault
     const faultIsArray = isArray(fault) ? fault : [fault]
-    const totalNumber = faultIsArray.length()
+    const totalNumber = faultIsArray.length
 
     const faultArray = faultIsArray.map((item,index) => {
       return {

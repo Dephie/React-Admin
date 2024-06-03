@@ -37,7 +37,7 @@ export async function userInitRequest(params, filter,token) {
 
     const user = data.account_detail
     const userIsArray = isArray(user) ? user : [user]
-    const totalNumber = userIsArray.length()
+    const totalNumber = userIsArray.length
 
     const userArray = userIsArray.map((item,index) => {
       return {
