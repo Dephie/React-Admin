@@ -1,7 +1,7 @@
 import { Col, Row, Space } from 'antd';
 
 import Repair from './components/repair.tsx';
-import BannerCard from './components/Banner.tsx';
+import BannerCard from './components/banner.tsx';
 import { LabourCharges, PartsCharges } from './components/charges.tsx';
 import Satisfaction from './components/satisfaction.tsx'
 import TotalCard from './components/count.tsx';

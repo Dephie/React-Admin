@@ -53,7 +53,7 @@ function Basic({ percent, title, subtitle, iconify, bg, strokeColor }: Props) {
         format={format}
         strokeColor={strokeColor}
       />
-      <div className="ml-6 flex flex-col">
+      <div className="ml-6 flex flex-col py-3" >
         <span className="text-2xl font-bold">{title}</span>
         <span className="opacity-50">{subtitle}</span>
       </div>

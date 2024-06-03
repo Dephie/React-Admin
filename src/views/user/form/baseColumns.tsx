@@ -20,6 +20,9 @@ const getBaseColumns = (): FormColumnType[] => {
             title: '出生日期',
             dataIndex: 'birthdate',
             valueType: 'date',
+            fieldProps: {
+                defaultValue: new Date(), // 设置默认值为今天
+            },
         },
         {
             title: '性别',

@@ -15,7 +15,7 @@ interface UserProps{
     base:
     {
         name: string;
-        birthdate: string;
+        birthdate: Date;
         gender: string;
         address: string;
     }
@@ -100,7 +100,7 @@ const User = () => {
     const [initialValues, setInitialValues] = useState<UserProps>({
         base: {
             name: '',
-            birthdate: '',
+            birthdate: new Date(),
             gender: '',
             address: '',
         },
@@ -125,7 +125,7 @@ const User = () => {
                 setInitialValues({
                     base: {
                         name: data.username,
-                        birthdate: data.birthdate,
+                        birthdate: new Date(),
                         address: data.address,
                         gender: data.gender,
 

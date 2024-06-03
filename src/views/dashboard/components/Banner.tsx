@@ -17,11 +17,11 @@ export default function BannerCard() {
       className="!mx-0 rounded-2xl p-10"
       gutter={[16, 16]}
       justify="space-between"
-      style={{ background: bg, height:'253.5px'}}
+      style={{ background: bg}}
     >
       <Col span={24} md={12} xl={16} className="flex-1 text-center md:text-left">
         <div
-          className="text-lg font-semibold md:text-xl"
+          className="pt-2 text-lg font-semibold md:text-xl"
           style={{ color: themeToken.colorPrimaryActive }}
         >
           <h4>欢迎回来 👋 </h4>
@@ -47,9 +47,9 @@ export default function BannerCard() {
         <button
           className="font-mediumtext-black m-auto flex items-center justify-center rounded-md px-2 py-0.5 shadow-none md:m-0"
           style={{ backgroundColor: themeToken.colorPrimary, color: '#fff' }}
-          onClick={() => window.open('https://discord.gg/fXemAXVNDa')}
+          onClick={() => window.open('http://www.tju.edu.cn/')}
         >
-          <span className="px-1 py-0.5 text-sm font-medium">雄安思极</span>
+          <span className="px-1 py-0.5 text-sm font-medium">天津大学</span>
         </button>
       </Col>
 
