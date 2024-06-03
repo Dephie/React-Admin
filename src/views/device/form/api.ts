@@ -97,7 +97,7 @@ export async function deviceUpdateRequest(values, formData,token) {
 
   const device_id = Number(formData.device_id)
   const user_id = values.user_id
-  const deice_name = values.device_name
+  const device_name = values.device_name
   const device_status = Number(values.device_status)
 
 
@@ -105,7 +105,7 @@ export async function deviceUpdateRequest(values, formData,token) {
     const requestData = {
       device_id,
       user_id,
-      deice_name,
+      device_name,
       device_status,
       token,
     }
