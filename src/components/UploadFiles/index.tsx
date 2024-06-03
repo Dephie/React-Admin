@@ -42,7 +42,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     onChange = () => ({}),
   } = props
 
-  const list: UploadFile[] = value.split(',').filter(item => item).map((item) => {
+  const list: UploadFile[] = (value || '').split(',').filter(item => item).map((item) => {
     return {
       uid: item,
       name: item,
@@ -124,7 +124,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     customRequest,
     beforeUpload,
     fileList,
-    multiple: true,
+    multiple: false,
     maxCount,
     accept,
     listType: 'picture-card' as any,
