@@ -1,10 +1,10 @@
 import { Col, Row, Space } from 'antd';
 
-import AreaDownload from './components/area-download.tsx';
+import Repair from './components/repair.tsx';
 import BannerCard from './components/banner-card.tsx';
-import { Applications, Conversion } from './components/conversion_applications.tsx';
+import { LabourCharges, PartsCharges } from './components/charges.tsx';
 import Satisfaction from './components/satisfaction.tsx'
-import TotalCard from './components/total-card.tsx';
+import TotalCard from './components/count.tsx';
 
 function Workbench() {
     return (
@@ -15,8 +15,8 @@ function Workbench() {
                 </Col>
                 <Col span={24} md={8}>
                     <Space direction="vertical" size="middle" className="h-full w-full">
-                        <Conversion />
-                        <Applications />
+                        <LabourCharges />
+                        <PartsCharges />
                     </Space>
                 </Col>
             </Row>
@@ -24,7 +24,7 @@ function Workbench() {
             <Row gutter={[16, 16]} className="mt-4" justify="center">
                 <Col span={24} md={8}>
                     <TotalCard
-                        title="Total Active Users"
+                        title="注册用户数"
                         increase
                         count="18,765"
                         percent="2.6%"
@@ -34,7 +34,7 @@ function Workbench() {
 
                 <Col span={24} md={8}>
                     <TotalCard
-                        title="Total Installed"
+                        title="在线设备总数"
                         increase
                         count="4,876"
                         percent="0.2%"
@@ -44,7 +44,7 @@ function Workbench() {
 
                 <Col span={24} md={8}>
                     <TotalCard
-                        title="Total Downloads"
+                        title="维修人员数量"
                         increase={false}
                         count="678"
                         percent="0.1%"
@@ -58,7 +58,7 @@ function Workbench() {
                     <Satisfaction />
                 </Col>
                 <Col span={24} md={12} lg={16}>
-                    <AreaDownload />
+                    <Repair />
                 </Col>
             </Row>
         </>

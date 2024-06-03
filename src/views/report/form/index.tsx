@@ -38,7 +38,7 @@ function Basic() {
         //     </Button>,
         //   ],
         // }}
-        rowSelection={{}}
+        //rowSelection={{}}
         // delFunction={deleteRecord}
         onFinish={async (values, formType,formData) => {
           // if (formType === 'new') {

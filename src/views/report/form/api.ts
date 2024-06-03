@@ -21,13 +21,13 @@ export function Request(params, filter?): any {
 
 export async function reportInitRequest(params, filter) {
   try {
+    const { pageSize, current, ...filterParams } = params
     const page_size = params.pageSize
-    const current = params.current
     const requestData = {
       params: {
         page_size,
         current,
-        ...filter,
+        filterParams,
       }
     }
     // console.log('Sending request with data:', requestData)

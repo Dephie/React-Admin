@@ -14,7 +14,7 @@ export default function TotalCard({ title, increase, count, percent, chartData }
   return (
     <Card>
       <div className="flex-grow">
-        <h6 className="text-sm font-medium">{title}</h6>
+        <h6 className="text-sm font-bold">{title}</h6>
         <div className="mb-2 mt-4 flex flex-row">
           {increase ? (
             <SvgIcon icon="ic_rise" size={24} color="rgb(34, 197, 94)" />

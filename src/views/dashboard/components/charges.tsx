@@ -3,26 +3,26 @@ import { Progress } from 'antd';
 import { Iconify } from '@/components/icon';
 import { useThemeToken } from '@/hooks/use-theme-token';
 
-export function Conversion() {
+export function LabourCharges() {
   const { colorPrimaryActive, colorPrimaryBorder } = useThemeToken();
   return (
     <Basic
       percent={48}
       title="38,566"
-      subtitle="Conversion"
+      subtitle="人工费用"
       iconify="tabler:user-filled"
       bg={colorPrimaryActive}
       strokeColor={colorPrimaryBorder}
     />
   );
 }
-export function Applications() {
+export function PartsCharges() {
   const { colorInfoActive, colorInfoBorder } = useThemeToken();
   return (
     <Basic
-      percent={75}
+      percent={32}
       title="45,566"
-      subtitle="Applications"
+      subtitle="零部件费用"
       iconify="ic:round-email"
       bg={colorInfoActive}
       strokeColor={colorInfoBorder}
@@ -53,11 +53,11 @@ function Basic({ percent, title, subtitle, iconify, bg, strokeColor }: Props) {
         format={format}
         strokeColor={strokeColor}
       />
-      <div className="ml-2 flex flex-col">
+      <div className="ml-6 flex flex-col">
         <span className="text-2xl font-bold">{title}</span>
         <span className="opacity-50">{subtitle}</span>
       </div>
-      <div className="absolute right-0">
+      <div className="absolute right-0 pr-2">
         <Iconify icon={iconify} style={{ opacity: 0.08 }} size={100} />
       </div>
     </div>
