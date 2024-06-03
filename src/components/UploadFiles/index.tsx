@@ -71,6 +71,8 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
 
     const avatarFile = options.file
     const formData = new FormData()
+    formData.append('token', token)
+    formData.append('user_id', userInfo.id)
     formData.append('file', avatarFile)
     const reponse = await http.post('/api/image', formData)
     const falseUrl = reponse.data.url
