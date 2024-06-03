@@ -3,7 +3,7 @@ import { Col, Row, Space } from 'antd';
 import AreaDownload from './components/area-download.tsx';
 import BannerCard from './components/banner-card.tsx';
 import { Applications, Conversion } from './components/conversion_applications.tsx';
-import CurrentDownload from './components/current-download.tsx';
+import Satisfaction from './components/satisfaction.tsx'
 import TotalCard from './components/total-card.tsx';
 
 function Workbench() {
@@ -55,7 +55,7 @@ function Workbench() {
 
             <Row gutter={[16, 16]} className="mt-4" justify="center">
                 <Col span={24} md={12} lg={8}>
-                    <CurrentDownload />
+                    <Satisfaction />
                 </Col>
                 <Col span={24} md={12} lg={16}>
                     <AreaDownload />

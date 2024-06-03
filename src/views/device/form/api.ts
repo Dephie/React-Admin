@@ -72,14 +72,14 @@ export async function deviceInitRequest(params, filter) {
 export async function deviceNewRequest(values, token) {
 
   const user_id = values.user_id
-  const deice_name = values.device_name
+  const device_name = values.device_name
   const device_status = Number(values.device_status)
 
 
   try {
     const requestData = {
       user_id,
-      deice_name,
+      device_name,
       device_status,
       token,
     }

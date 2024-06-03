@@ -4,11 +4,11 @@ import Card from '@/components/card';
 import Chart from '@/components/chart/chart';
 import useChart from '@/components/chart/useChart';
 
-export default function CurrentDownload() {
+export default function Satisfaction() {
   return (
     <Card className="flex-col">
       <header className="self-start">
-        <Typography.Title level={5}>Current Download</Typography.Title>
+        <Typography.Title level={5}>报修服务满意度</Typography.Title>
       </header>
       <main>
         <ChartDonut />
@@ -20,7 +20,8 @@ export default function CurrentDownload() {
 const series = [44, 55, 13, 43];
 function ChartDonut() {
   const chartOptions = useChart({
-    labels: ['Mac', 'Window', 'IOS', 'Android'],
+    labels: ['好评', '中评', '差评', '未评价'],
+    colors: ['#19c719', '#f6bf37' , '#e04040','#0000FF'],
     stroke: {
       show: false,
     },
@@ -40,6 +41,8 @@ function ChartDonut() {
           size: '90%',
           labels: {
             total: {
+              show: true,
+              label: '总数',
               fontSize: '12px',
             },
             value: {
