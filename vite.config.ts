@@ -3,10 +3,12 @@ import process from 'node:process'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import vitePluginRequire from "vite-plugin-require";
+import commonjs from 'vite-plugin-commonjs'
+
 function reslovePath(pathName) {
   return path.resolve(process.cwd(), pathName)
 }
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -17,7 +19,15 @@ export default defineConfig({
       // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]',
     }),
-    vitePluginRequire()
+    commonjs({
+      filter(id) {
+        // `node_modules` is exclude by default, so we need to include it explicitly
+        // https://github.com/vite-plugin/vite-plugin-commonjs/blob/v0.7.0/src/index.ts#L125-L127
+        if (id.includes('node_modules/react-admin-kit')) {
+          return true
+        }
+      }
+    })
   ],
   resolve: {
     alias: {

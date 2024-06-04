@@ -39,7 +39,7 @@ const Login: React.FC = () => {
       const userInfoResponse = await http.get('/api/user',request)
       setUserInfo(userInfoResponse.data.user)
       message.success('登录成功')
-      navigate('/dashboard', {
+      navigate('/index', {
         replace: true,
       })
     }
