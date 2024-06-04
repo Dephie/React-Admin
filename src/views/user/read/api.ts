@@ -20,9 +20,9 @@ export function Request(params, filter?,token?): any {
 
 export async function userInitRequest(params, filter,token) {
   try {
+    const { pageSize, current, ...filterParams } = params
     const page_size = 1
     const currentSecond = 1
-    const { pageSize, current, ...filterParams } = params
     const requestData = {
       params: {
         ...filterParams,
