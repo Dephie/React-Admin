@@ -58,7 +58,7 @@ export const menuList: IRoute[] = [
   },
   {
     path: '/report',
-    element: <div><Outlet /></div>,
+    element: <Outlet />,
     meta: {
       title: '故障报修',
       icon: <ShieldAlert />,
