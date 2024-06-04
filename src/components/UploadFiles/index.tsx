@@ -92,7 +92,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     // const { url } = data.avatar
 
     setUserInfo({ ...userInfo, avatar: url })
-    setFileList(prevState => ([...prevState, { uid: url, name: url, status: 'done', currentUrl }]))
+    setFileList(prevState => ([...prevState, { uid: currentUrl, name: currentUrl, status: 'done', currentUrl }]))
   }
 
   function beforeUpload(file: File): Promise<File> {
