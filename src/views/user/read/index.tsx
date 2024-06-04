@@ -1,4 +1,3 @@
-import { message } from 'antd'
 import { useRef } from 'react'
 import type { ActionRefType, InnerRefType } from 'react-admin-kit'
 import { ProTable} from 'react-admin-kit'
@@ -24,7 +23,7 @@ function Basic() {
         name="用户管理"
         columns={getColumns()}
         // request={mockRequest}
-        request={(params, filter) => userInitRequest(params, filter,token)}
+        request={(params) => userInitRequest(params,token)}
         bordered
         innerRef={innerRef}
         actionRef={actionRef}

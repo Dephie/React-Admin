@@ -8,6 +8,7 @@ interface State {
     name: string
     avatar: string
     phone_number: string
+    level: 0;
   }
 }
 
@@ -23,6 +24,7 @@ const userStore = create(persist<State & Action>(set => ({
     name: '',
     avatar: '',
     phone_number: '',
+    level: 0,
   },
   setToken: (value) => {
     set(() => ({ token: value }))

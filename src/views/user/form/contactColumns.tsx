@@ -4,12 +4,8 @@ import type { FormColumnType } from 'react-admin-kit';
 const getContactColumns = (): FormColumnType[] => [
 
     {
-        title: '电话',
-        dataIndex: 'contact',
-    },
-    {
-        title: '邮箱',
-        dataIndex: 'email',
+        title: '手机号码',
+        dataIndex: 'phone_number',
     }
     
     // {
@@ -42,7 +38,6 @@ const getContactColumns = (): FormColumnType[] => [
     //     }),
     // },
 
-  
     // {
     //     title: '办理业务',
     //     dataIndex: 'serviceName',

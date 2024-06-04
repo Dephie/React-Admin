@@ -18,25 +18,26 @@ export function Request(params, filter?,token?): any {
   })
 }
 
-export async function userInitRequest(params, filter,token) {
+export async function userInitRequest(params,token) {
   try {
     const { pageSize, current, ...filterParams } = params
-    const page_size = 1
-    const currentSecond = 1
+    const page_size = pageSize
     const requestData = {
       params: {
         ...filterParams,
+        page_size,
+        current,
         token,
       }
     }
     // console.log('Sending request with data:', requestData)
-    const Response = await http.get('/api/account/view', requestData)
+    const Response = await http.get('/api/user/all', requestData)
 
     const data = Response.data
 
     const status: boolean = !data.status_code
 
-    const user = data.account_detail
+    const user = data.user
     const userIsArray = isArray(user) ? user : [user]
     const totalNumber = userIsArray.length
 
@@ -44,10 +45,9 @@ export async function userInitRequest(params, filter,token) {
       return {
         id: index + 1,
         user_id: item.id ? item.id : 0,
-        username: item.username ? item.username : '',
-        email: item.email ? item.email : '',
-        role: item.role ? item.role : '',
-        create_time: item.create_time ? item.create_time : '',
+        username: item.name ? item.name : '',
+        level: item.level ? item.level : 0,
+        phone_number: item.phone_number ? item.phone_number : '',
       }
     })
     //console.log('Sending request with data:', deviceArray)

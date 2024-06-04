@@ -4,7 +4,7 @@ const getBaseColumns = (): FormColumnType[] => {
     return [
         {
             title: '用户名',
-            dataIndex: 'name',
+            dataIndex: 'username',
             //colProps: { span: 24 },
             formItemProps: {
                 //labelCol: { span: 3 },
@@ -17,30 +17,21 @@ const getBaseColumns = (): FormColumnType[] => {
             },
         },
         {
-            title: '出生日期',
-            dataIndex: 'birthdate',
-            valueType: 'date',
-            fieldProps: {
-                defaultValue: new Date(), // 设置默认值为今天
-            },
-        },
-        {
-            title: '性别',
-            dataIndex: 'gender',
+            title: '用户角色',
+            dataIndex: 'level',
             valueType: 'radio',
+            colProps: { span: 15 },
             fieldProps: {
-                options: ['男', '女'],
-            },
-        },
-        {
-            title: '地址',
-            dataIndex: 'address',
-            colProps: { span: 21 },
-            formItemProps: {
-                labelCol: { span: 3 },
+                labelCol: { span: 6 },
+                options: [
+                    { label: '用户', value: 0 },
+                    { label: '维修人员', value: 1 },
+                    { label: '管理者', value: 2 },
+                ],
                 rules: [
                     {
-                        message: '用户名为必填项',
+                        required: true,
+                        message: '用户角色为必填项',
                     },
                 ],
             },

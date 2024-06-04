@@ -14,15 +14,12 @@ import { http } from '@/utils/http';
 interface UserProps{
     base:
     {
-        name: string;
-        birthdate: Date;
-        gender: string;
-        address: string;
+        username: string;
+        level: number;
     }
     contact:
     {
-        contact: string;
-        email: string;
+        phone_number: string;
     }
 }
 
@@ -30,7 +27,7 @@ const User = () => {
     const formRef = useRef<FormInstance>();
     const innerRef = useRef<SchemaFormInnerRefType>();
     
-    const { token, userInfo } = userStore();
+    const { token, userInfo,setUserInfo } = userStore();
 
     const onFinish = async (values: any) => {
         //console.log({ values, data: innerRef.current?.data });
@@ -45,7 +42,13 @@ const User = () => {
                 user_id: userInfo.id,
             }
             //console.log('Sending request with data:', requestData)
-            await http.post('/api/account/update', requestData)
+            await http.post('/api/user/update', requestData)
+            setUserInfo({
+                ...userInfo,
+                name: base.username,
+                level: base.level,
+                phone_number: contact.phone_number,
+            })
             // const CreateReportResponse = await http.post('/api/work_order/create', requestData)
             // const data = CreateReportResponse.data
         }
@@ -66,7 +69,7 @@ const User = () => {
             setLoading(true)
             const requestData = {
                 params:{
-                user_id:userInfo.id,
+                    user_id:userInfo.id,
                     token,
                 }
             }
@@ -76,15 +79,11 @@ const User = () => {
             const data = Response.data.user
             formRef.current?.setFieldsValue({
                 base: {
-                    name: data.username,
-                    //birthdate: data.birthdate,
-                    // address: data.address,
-                    // gender: data.gender,
-                    
+                    username: data.name,
+                    level:data.level,
                 },
                 contact: {
-                    contact: userInfo.phone_number,
-                    email: data.email,
+                    phone_number: data.phone_number,
                 }
             })
         }
@@ -98,16 +97,15 @@ const User = () => {
 
     // TODO
     const [initialValues, setInitialValues] = useState<UserProps>({
-        base: {
-            name: '',
-            birthdate: new Date(),
-            gender: '',
-            address: '',
+        base:
+        {
+            username: '',
+            level: 0,
         },
-        contact: {
-            contact: '',
-            email: '',
-        },
+        contact:
+        {
+            phone_number: '',
+        }
     });
 
     useEffect(() => {
@@ -124,15 +122,11 @@ const User = () => {
                 const data = Response.data.user
                 setInitialValues({
                     base: {
-                        name: data.username,
-                        birthdate: new Date(),
-                        address: data.address,
-                        gender: data.gender,
-
+                        username: data.name,
+                        level: data.level,
                     },
                     contact: {
-                        contact: data.phone_number,
-                        email: data.email,
+                        phone_number: data.phone_number,
                     }
                 })
             }

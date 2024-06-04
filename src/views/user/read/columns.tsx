@@ -12,23 +12,23 @@ export function getColumns(): TableColumnType[] {
     {
       title: '用户名',
       dataIndex: 'username',
-      hideInSearch: true,
     },
     {
       title: '用户角色',
-      dataIndex: 'role',
+      dataIndex: 'level',
+      valueType: 'radio',
+      fieldProps: {
+        options: [
+          { label: '用户', value: 0 },
+          { label: '维修人员', value: 1 },
+          { label: '管理者', value: 2 },
+        ],
+      },
       hideInSearch: true,
     },
     {
-      title: '创建时间',
-      dataIndex: 'create_time',
-      valueType: 'dateTime',
-      hideInSearch: true,
-    },
-    {
-      title: '邮箱',
-      dataIndex: 'email',
-      hideInSearch: true,
+      title: '手机号码',
+      dataIndex: 'phone_number',
     },
     {
     title: '操作',
