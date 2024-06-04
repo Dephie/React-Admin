@@ -91,7 +91,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     // const data = ReportResponse.data
     // const { url } = data.avatar
 
-    setFileList(prevState => ([...prevState, { uid: currentUrl, name: currentUrl, status: 'done', currentUrl }]))
+    setFileList(prevState => ([...prevState, { uid: currentUrl, name: currentUrl, status: 'done', url:currentUrl }]))
     setUserInfo({ ...userInfo, avatar: url })
   }
 
