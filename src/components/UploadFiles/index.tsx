@@ -76,6 +76,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     formData.append('file', avatarFile)
     const reponse = await http.post('/api/image', formData)
     const url = reponse.data.avatar
+    const currentUrl = import.meta.env.VITE_APP_API + url
     // const { url } = await Promise.resolve({
     //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
     // })
@@ -91,7 +92,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     // const { url } = data.avatar
 
     setUserInfo({ ...userInfo, avatar: url })
-    setFileList(prevState => ([...prevState, { uid: url, name: url, status: 'done', url }]))
+    setFileList(prevState => ([...prevState, { uid: url, name: url, status: 'done', currentUrl }]))
   }
 
   function beforeUpload(file: File): Promise<File> {
