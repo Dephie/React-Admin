@@ -3,7 +3,7 @@ import process from 'node:process'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-
+import vitePluginRequire from "vite-plugin-require";
 function reslovePath(pathName) {
   return path.resolve(process.cwd(), pathName)
 }
@@ -17,6 +17,7 @@ export default defineConfig({
       // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]',
     }),
+    vitePluginRequire()
   ],
   resolve: {
     alias: {
