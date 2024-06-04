@@ -131,7 +131,7 @@ const User = () => {
                     title="个人头像"
                     >
                     <div className='items-center justify-center'>
-                            <FileUpload value={import.meta.env.VITE_APP_API + userInfo.avatar} />
+                            <FileUpload value={'http://localhost:8080/'+ userInfo.avatar} />
                     </div>
                 </Card>
                 <Card

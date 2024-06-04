@@ -76,7 +76,7 @@ const UploadFiles: React.FC<UploadFileProps> = (props) => {
     formData.append('file', avatarFile)
     const reponse = await http.post('/api/image', formData)
     const url = reponse.data.avatar
-    const currentUrl = import.meta.env.VITE_APP_API + url
+    const currentUrl = 'http://localhost:8080/' + url
     // const { url } = await Promise.resolve({
     //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
     // })
