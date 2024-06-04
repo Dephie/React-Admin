@@ -33,7 +33,7 @@ const Register: React.FC = () => {
       const userInfoResponse = await http.get('/api/user', request)
       setUserInfo(userInfoResponse.data.user)
       message.success('注册成功')
-      navigate('/', {
+      navigate('/dashboard', {
         replace: true,
       })
     }

@@ -41,7 +41,7 @@ export interface IRoute {
 
 export const menuList: IRoute[] = [
   {
-    path: '/index',
+    path: '/dashboard',
     element: <Workbench />,
     meta: {
       title: '工作台',
