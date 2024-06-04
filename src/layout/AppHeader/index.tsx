@@ -56,7 +56,7 @@ export default function AppHeader({ collapsed, setCollapsed }: { collapsed: bool
           <div className="h-[40px] flex items-center justify-center cursor-pointer rounded-[8px] px-[5px] hover:bg-gray-100">
             <span className="mr-[10px]">{userInfo.name || '-'}</span>
             <a onClick={e => e.preventDefault()}>
-              <Avatar size={30} src={userInfo.avatar} />
+              <Avatar size={30} src={import.meta.env.VITE_APP_API + userInfo.avatar} />
             </a>
           </div>
         </Dropdown>
