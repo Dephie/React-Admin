@@ -66,7 +66,7 @@ export const menuList: IRoute[] = [
     children: [
       {
         path: '/report/create',
-        element: <div><CreateReport /></div>,
+        element: <CreateReport />,
         meta: {
           title: '故障报修',
           icon: <Bell />,
@@ -74,7 +74,7 @@ export const menuList: IRoute[] = [
       },
       {
         path: '/report/form',
-        element: <div><Report /></div>,
+        element: <Report />,
         meta: {
           title: '管理订单',
           icon: <FolderKanban />,
@@ -84,7 +84,7 @@ export const menuList: IRoute[] = [
   },
   {
     path: '/ticket',
-    element: <div><Outlet /></div>,
+    element: <Outlet />,
     meta: {
       title: '工单管理',
       icon: <Clipboard />,
@@ -92,7 +92,7 @@ export const menuList: IRoute[] = [
     children: [
       {
         path: '/ticket/create',
-        element: <div><CreateTicket /></div>,
+        element: <CreateTicket />,
         meta: {
           title: '创建工单',
           icon: <ClipboardPen />,
@@ -100,7 +100,7 @@ export const menuList: IRoute[] = [
       },
       {
         path: '/ticket/form',
-        element: <div><Ticket /></div>,
+        element: <Ticket />,
         meta: {
           title: '管理工单',
           icon: <ClipboardList />,
@@ -110,7 +110,7 @@ export const menuList: IRoute[] = [
   },
   {
     path: '/user',
-    element: <div><Outlet /></div>,
+    element: <Outlet />,
     meta: {
       title: '账号管理',
       icon: <UsersRound />,
@@ -118,7 +118,7 @@ export const menuList: IRoute[] = [
     children: [
       {
         path: '/user/information',
-        element: <div><ReadUser/></div>,
+        element: <ReadUser/>,
         meta: {
           title: '查看用户信息',
           icon: <UserRoundSearch />,
@@ -126,7 +126,7 @@ export const menuList: IRoute[] = [
       },
       {
         path: '/user/settings',
-        element: <div><User /></div>,
+        element: <User />,
         meta: {
           title: '更新本人信息',
           icon: <UserRoundCog />,
