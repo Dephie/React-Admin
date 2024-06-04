@@ -34,6 +34,7 @@ const getBaseColumns = (): FormColumnType[] => {
                         message: '用户角色为必填项',
                     },
                 ],
+                disabled: true,
             },
         },
         // {

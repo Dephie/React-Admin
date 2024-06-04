@@ -73,8 +73,6 @@ const User = () => {
                     token,
                 }
             }
-            // console.log('Sending request with data:', requestData)
-            //await http.post('/api/account/view', requestData)
             const Response = await http.get('/api/user', requestData)
             const data = Response.data.user
             formRef.current?.setFieldsValue({
@@ -94,53 +92,16 @@ const User = () => {
             setLoading(false)
         }
     };
-
-    // TODO
-    const [initialValues, setInitialValues] = useState<UserProps>({
-        base:
-        {
-            username: '',
-            level: 0,
+    
+    const initialValues = {
+        base: {
+            username: userInfo.name,
+            level:userInfo.level,
         },
-        contact:
-        {
-            phone_number: '',
+        contact: {
+            phone_number:userInfo.phone_number
         }
-    });
-
-    useEffect(() => {
-        const fetchInitialValues = async () => {
-            try {
-                setLoading(true)
-                const requestData = {
-                    params: {
-                        user_id: userInfo.id,
-                        token,
-                    }
-                }
-                const Response = await http.get('/api/user', requestData)
-                const data = Response.data.user
-                setInitialValues({
-                    base: {
-                        username: data.name,
-                        level: data.level,
-                    },
-                    contact: {
-                        phone_number: data.phone_number,
-                    }
-                })
-            }
-            catch (error) {
-                console.log(error)
-            }
-            finally {
-                setLoading(false)
-            }
-        };
-
-        fetchInitialValues();
-    }, []); // 注意这里的空依赖数组，这意味着这个 useEffect 只会在组件挂载后运行一次
-    //TODO
+    }
 
     return (
         <div>
